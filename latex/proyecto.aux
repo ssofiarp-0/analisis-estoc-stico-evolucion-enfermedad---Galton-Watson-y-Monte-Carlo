@@ -4,83 +4,89 @@
 \@writefile{toc}{\contentsline {title}{Análisis Estocástico de la Evolución de Patologías y Evaluación del Impacto Farmacológico mediante Procesos de Galton-Watson}{1}{}\protected@file@percent }
 \@writefile{toc}{\authcount {1}}
 \@writefile{toc}{\contentsline {author}{Sofía Rodríguez Peláez}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introducción}{1}{}\protected@file@percent }
-\newlabel{sec:introduccion}{{1}{1}{}{section.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Contexto biológico y genético del problema}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Modelos deterministas vs Modelos estocásticos}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Objetivos del estudio}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Marco Teórico y Formulación Matemática}{3}{}\protected@file@percent }
-\newlabel{sec:marco_teorico}{{2}{3}{}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Definición del Proceso de Ramificación de Galton-Watson}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Grafo de transición de estados individuales en el sistema estocástico.}}{4}{}\protected@file@percent }
-\newlabel{fig:grafo_estados}{{1}{4}{}{figure.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Representación en árbol de ramificación de Galton-Watson multitipo a lo largo de 3 generaciones. Los nodos azules representan individuos sanos ($S$), los rojos enfermos ($I$) y los grises punteados ($\dagger $) corresponden a ramas extinguidas por muerte prematura.}}{4}{}\protected@file@percent }
-\newlabel{fig:arbol_galton_watson}{{2}{4}{}{figure.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Variables y Parámetros del Modelo}{5}{}\protected@file@percent }
-\newlabel{subsec:variables_parametros}{{2.2}{5}{}{subsection.2.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Variables de Estado Poblacionales e Individuales}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Parámetros Configurables del Sistema}{5}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Parámetros cuantitativos definidos para el modelo estocástico en el Caso Base.}}{5}{}\protected@file@percent }
-\newlabel{tab:parametros_caso_base}{{1}{5}{}{table.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Métricas de Salida y Variables Observables}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Probabilidad de Extinción del Caso Base}{6}{}\protected@file@percent }
-\newlabel{subsec:probabilidad_extincion_caso_base}{{2.3}{6}{}{subsection.2.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Caso Base: Análisis Estocástico sin Intervención}{7}{}\protected@file@percent }
-\newlabel{sec:caso_base}{{3}{7}{}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Configuración de parámetros}{7}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Valores numéricos de los parámetros por defecto configurados en el modelo de Galton-Watson.}}{8}{}\protected@file@percent }
-\newlabel{tab:configuracion_parametros}{{2}{8}{}{table.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Simulación en Python}{8}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Trayectoria temporal de la población en una única realización del Caso Base sin intervención farmacológica ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja) hasta la absorción en $N=0$.}}{8}{}\protected@file@percent }
-\newlabel{fig:simulacion_inicial_caso_base}{{3}{8}{}{figure.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Experimento de Monte Carlo}{9}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Trayectoria temporal de la población una simulación Monte Carlo de 500 réplicas de la realización del Caso Base sin intervención farmacológica ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $B = 500$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja) hasta la absorción en $N=0$.}}{9}{}\protected@file@percent }
-\newlabel{fig:simulacion_inicial_caso_base_monte_carlo}{{4}{9}{}{figure.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Estadísticos descriptivos del régimen de absorción y distribución del tiempo de extinción ($T_{\text  {abs}}$) obtenidos en $M = 500$ réplicas de Monte Carlo ($t_{\max } = 90$).}}{10}{}\protected@file@percent }
-\newlabel{tab:resultados_monte_carlo}{{3}{10}{}{table.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Evaluación del Impacto Farmacológico (Experimentos Comparativos)}{10}{}\protected@file@percent }
-\newlabel{sec:farmacos}{{4}{10}{}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Diseño de escenarios terapéuticos y modificación del modelo}{10}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Grafo de transición de estados individuales bajo intervención farmacológica. Se incorpora la tasa de curación ($\rho $) como transición reversible hacia el estado sano y la reducción de la mortalidad patológica mediante la eficacia terapéutica ($m_1(1-\alpha )$).}}{11}{}\protected@file@percent }
-\newlabel{fig:grafo_estados_farmaco}{{5}{11}{}{figure.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Definición de los Escenarios Terapéuticos}{11}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Configuración de los parámetros terapéuticos ($\alpha $ y $\rho $) y mortalidad efectiva resultante para los tres fármacos evaluados.}}{12}{}\protected@file@percent }
-\newlabel{tab:escenarios_farmacos}{{4}{12}{}{table.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Estudio de las nuevas probabilidades de absorción de los tres modelos}{12}{}\protected@file@percent }
-\newlabel{subsec:estudio_absorcion_modelos}{{4.3}{12}{}{subsection.4.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Modelo 1: Fármaco de Eficacia Baja ($\alpha = 0.30, \, \rho = 0.10$)}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Modelo 2: Fármaco de Eficacia Intermedia ($\alpha = 0.60, \, \rho = 0.35$)}{14}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Modelo 3: Fármaco de Eficacia Alta ($\alpha = 0.85, \, \rho = 0.70$)}{14}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Simulación de las tres estrategias farmacológicas}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Resultados de la utilización del primer fármaco}{15}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Trayectoria temporal de la población en una única realización con el primer fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.3$, $\rho =0.1$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja) hasta la absorción en $N=0$.}}{15}{}\protected@file@percent }
-\newlabel{fig:simulacion_caso_farmaco_1}{{6}{15}{}{figure.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Trayectoria temporal de la población en múltiples realizaciones con el método de Monte Carlo con el primer fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.3$, $\rho =0.1$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja) hasta la absorción en $N=0$.}}{16}{}\protected@file@percent }
-\newlabel{fig:simulacion_caso_farmaco_1_monte_carlo}{{7}{16}{}{figure.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Resultados de la utilización del segundo fármaco}{16}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Trayectoria temporal de la población en una única realización con el segundo fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.6$, $\rho =0.35$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja).}}{17}{}\protected@file@percent }
-\newlabel{fig:simulacion_caso_farmaco_2}{{8}{17}{}{figure.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Trayectoria temporal de la población en múltiples realizaciones con el método de Monte Carlo con el segundo fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.6$, $\rho =0.35$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja)}}{17}{}\protected@file@percent }
-\newlabel{fig:simulacion_caso_farmaco_2_monte_carlo}{{9}{17}{}{figure.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Resultados de la utilización del tercer fármaco}{18}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Trayectoria temporal de la población en una única realización con el tercer fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.85$, $\rho =0.7$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja).}}{18}{}\protected@file@percent }
-\newlabel{fig:simulacion_caso_farmaco_3}{{10}{18}{}{figure.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Trayectoria temporal de la población en múltiples realizaciones con el método de Monte Carlo con el tercer fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.85$, $\rho =0.7$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja).}}{19}{}\protected@file@percent }
-\newlabel{fig:simulacion_caso_farmaco_3_monte_carlo}{{11}{19}{}{figure.11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Análisis Comparativo y Discusión de Resultados}{19}{}\protected@file@percent }
-\newlabel{sec:discusion}{{6}{19}{}{section.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Comparativa global entre predicciones teóricas ($\mathcal  {R}_0^{\text  {global}}$, $\eta _{\text  {total}}$) y resultados empíricos de Monte Carlo ($M=500$, $t_{\max }=90$) para el Caso Base y los tres modelos farmacológicos.}}{19}{}\protected@file@percent }
-\newlabel{tab:comparativa_global_final}{{5}{19}{}{table.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Análisis de la complejidad computacional}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusiones y Trabajos Futuros}{20}{}\protected@file@percent }
-\newlabel{sec:conclusiones}{{8}{20}{}{section.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Amenaza de la enfermedad respecto a la población}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Tres soluciones propuestas}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Realidad}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Diferentes propuestas a futuro}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.1}Tiempo de obtención del fármaco}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Índice General}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introducción}{3}{}\protected@file@percent }
+\newlabel{sec:introduccion}{{1}{3}{}{section.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Contexto biológico y genético del problema}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Modelos deterministas vs Modelos estocásticos}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Objetivos del estudio}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Marco Teórico y Formulación Matemática}{4}{}\protected@file@percent }
+\newlabel{sec:marco_teorico}{{2}{4}{}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Definición del Proceso de Ramificación de Galton-Watson}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Grafo de transición de estados individuales en el sistema estocástico.}}{5}{}\protected@file@percent }
+\newlabel{fig:grafo_estados}{{1}{5}{}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Representación en árbol de ramificación de Galton-Watson multitipo a lo largo de 3 generaciones. Los nodos azules representan individuos sanos ($S$), los rojos enfermos ($I$) y los grises punteados ($\dagger $) corresponden a ramas extinguidas por muerte prematura.}}{5}{}\protected@file@percent }
+\newlabel{fig:arbol_galton_watson}{{2}{5}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Variables y Parámetros del Modelo}{6}{}\protected@file@percent }
+\newlabel{subsec:variables_parametros}{{2.2}{6}{}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Variables de Estado Poblacionales e Individuales}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Parámetros Configurables del Sistema}{6}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Parámetros cuantitativos definidos para el modelo estocástico en el Caso Base.}}{6}{}\protected@file@percent }
+\newlabel{tab:parametros_caso_base}{{1}{6}{}{table.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Métricas de Salida y Variables Observables}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Probabilidad de Extinción del Caso Base}{7}{}\protected@file@percent }
+\newlabel{subsec:probabilidad_extincion_caso_base}{{2.3}{7}{}{subsection.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Caso Base: Análisis Estocástico sin Intervención}{8}{}\protected@file@percent }
+\newlabel{sec:caso_base}{{3}{8}{}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Configuración de parámetros}{8}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Valores numéricos de los parámetros por defecto configurados en el modelo de Galton-Watson.}}{9}{}\protected@file@percent }
+\newlabel{tab:configuracion_parametros}{{2}{9}{}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Simulación en Python}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Trayectoria temporal de la población en una única realización del Caso Base sin intervención farmacológica ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja) hasta la absorción en $N=0$.}}{9}{}\protected@file@percent }
+\newlabel{fig:simulacion_inicial_caso_base}{{3}{9}{}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Experimento de Monte Carlo}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Trayectoria temporal de la población una simulación Monte Carlo de 500 réplicas de la realización del Caso Base sin intervención farmacológica ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $B = 500$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja) hasta la absorción en $N=0$.}}{10}{}\protected@file@percent }
+\newlabel{fig:simulacion_inicial_caso_base_monte_carlo}{{4}{10}{}{figure.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Estadísticos descriptivos del régimen de absorción y distribución del tiempo de extinción ($T_{\text  {abs}}$) obtenidos en $M = 500$ réplicas de Monte Carlo ($t_{\max } = 90$).}}{11}{}\protected@file@percent }
+\newlabel{tab:resultados_monte_carlo}{{3}{11}{}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Evaluación del Impacto Farmacológico (Experimentos Comparativos)}{11}{}\protected@file@percent }
+\newlabel{sec:farmacos}{{4}{11}{}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Diseño de escenarios terapéuticos y modificación del modelo}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Grafo de transición de estados individuales bajo intervención farmacológica. Se incorpora la tasa de curación ($\rho $) como transición reversible hacia el estado sano y la reducción de la mortalidad patológica mediante la eficacia terapéutica ($m_1(1-\alpha )$).}}{12}{}\protected@file@percent }
+\newlabel{fig:grafo_estados_farmaco}{{5}{12}{}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Definición de los Escenarios Terapéuticos}{12}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Configuración de los parámetros terapéuticos ($\alpha $ y $\rho $) y mortalidad efectiva resultante para los tres fármacos evaluados.}}{13}{}\protected@file@percent }
+\newlabel{tab:escenarios_farmacos}{{4}{13}{}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Estudio de las nuevas probabilidades de absorción de los tres modelos}{13}{}\protected@file@percent }
+\newlabel{subsec:estudio_absorcion_modelos}{{4.3}{13}{}{subsection.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Modelo 1: Fármaco de Eficacia Baja ($\alpha = 0.30, \, \rho = 0.10$)}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Modelo 2: Fármaco de Eficacia Intermedia ($\alpha = 0.60, \, \rho = 0.35$)}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Modelo 3: Fármaco de Eficacia Alta ($\alpha = 0.85, \, \rho = 0.70$)}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Simulación de las tres estrategias farmacológicas}{16}{}\protected@file@percent }
+\newlabel{sec:simulacion_farmacos}{{5}{16}{}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Resultados de la utilización del primer fármaco}{16}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Trayectoria temporal de la población en una única realización con el primer fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.3$, $\rho =0.1$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja) hasta la absorción en $N=0$.}}{16}{}\protected@file@percent }
+\newlabel{fig:simulacion_caso_farmaco_1}{{6}{16}{}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Trayectoria temporal de la población en múltiples realizaciones con el método de Monte Carlo con el primer fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.3$, $\rho =0.1$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja) hasta la absorción en $N=0$.}}{17}{}\protected@file@percent }
+\newlabel{fig:simulacion_caso_farmaco_1_monte_carlo}{{7}{17}{}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Resultados de la utilización del segundo fármaco}{17}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Trayectoria temporal de la población en una única realización con el segundo fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.6$, $\rho =0.35$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja).}}{18}{}\protected@file@percent }
+\newlabel{fig:simulacion_caso_farmaco_2}{{8}{18}{}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Trayectoria temporal de la población en múltiples realizaciones con el método de Monte Carlo con el segundo fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.6$, $\rho =0.35$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja)}}{18}{}\protected@file@percent }
+\newlabel{fig:simulacion_caso_farmaco_2_monte_carlo}{{9}{18}{}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Resultados de la utilización del tercer fármaco}{19}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Trayectoria temporal de la población en una única realización con el tercer fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.85$, $\rho =0.7$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja).}}{19}{}\protected@file@percent }
+\newlabel{fig:simulacion_caso_farmaco_3}{{10}{19}{}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Trayectoria temporal de la población en múltiples realizaciones con el método de Monte Carlo con el tercer fármaco ($N_0=1000$, $p_I=0.05$, $\lambda =1.15$, $\alpha =0.85$, $\rho =0.7$). Se observa la evolución de la población total (línea continua negra), sanos (línea punteada verde) y enfermos (línea discontinua roja).}}{20}{}\protected@file@percent }
+\newlabel{fig:simulacion_caso_farmaco_3_monte_carlo}{{11}{20}{}{figure.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Análisis Comparativo y Discusión de Resultados}{20}{}\protected@file@percent }
+\newlabel{sec:discusion}{{6}{20}{}{section.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Comparativa global entre predicciones teóricas ($\mathcal  {R}_0^{\text  {global}}$, $\eta _{\text  {total}}$) y resultados empíricos de Monte Carlo ($M=500$, $t_{\max }=90$) para el Caso Base y los tres modelos farmacológicos.}}{20}{}\protected@file@percent }
+\newlabel{tab:comparativa_global_final}{{5}{20}{}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Análisis de la complejidad computacional}{21}{}\protected@file@percent }
+\newlabel{sec:complejidad}{{7}{21}{}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusiones y Trabajos Futuros}{21}{}\protected@file@percent }
+\newlabel{sec:conclusiones}{{8}{21}{}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Amenaza de la enfermedad respecto a la población}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Tres soluciones propuestas}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Realidad}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Diferentes propuestas a futuro}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.1}Tiempo de obtención del fármaco}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.2}Consecuencias del estado enfermo}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.3}Factores socioeconómicos y culturales}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.4}Resistencias farmacológicas}{23}{}\protected@file@percent }
 \immediate\closeout\minitoc
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.2}Consecuencias del estado enfermo}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.3}Factores socioeconómicos y culturales}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.4}Resistencias farmacológicas}{22}{}\protected@file@percent }
-\gdef \@abspage@last{22}
+\@writefile{toc}{\contentsline {section}{Anexo: Relación de Figuras del Estudio}{24}{}\protected@file@percent }
+\newlabel{sec:anexo}{{8.4.4}{24}{}{subsubsection.8.4.4}{}}
+\@writefile{toc}{\contentsline {section}{Anexo: Relación de Figuras del Estudio}{24}{}\protected@file@percent }
+\gdef \@abspage@last{24}

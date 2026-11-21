@@ -6,7 +6,6 @@
 
 \documentclass[graybox]{SNmult}
 
-% PAQUETES DE FUENTE Y FORMATO RECOMENDADOS POR SPRINGER
 \usepackage{type1cm}
 \usepackage{makeidx}
 \usepackage{graphicx}
@@ -15,6 +14,16 @@
 
 \usepackage{newtxtext}
 \usepackage[varvw]{newtxmath}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Sobrescribe directamente el formato interno de Springer sin depender de babel
+\makeatletter
+\renewcommand{\fnum@figure}{\textbf{Figura~\thefigure}}
+\renewcommand{\fnum@table}{\textbf{Tabla~\thetable}}
+\makeatother
+\renewcommand{\abstractname}{Resumen}
 
 \usepackage{tikz}
 \usetikzlibrary{automata, positioning, arrows.meta}
@@ -36,7 +45,20 @@
 	\abstract{Este trabajo analiza la evolución estocástica y la dinámica de transmisión de una patología en una población finita mediante un Proceso de Ramificación de Galton-Watson. El modelo incorpora mortalidad prematura basal ($m_0=0.05$), severidad patológica ($m_1=0.60$) y probabilidades condicionales de transmisión por herencia ($p_1=0.95$) y mutación ($p_0=0.15$). Debido a la naturaleza estocástica del sistema se justifica e implementa una simulación Monte Carlo con $M=500$ réplicas independientes para caracterizar el comportamiento esperado de la población para tratar de eliminar esa aleatoriedad. Se evalúa la convergencia hacia el estado absorbente de extinción total ($N=0$), estimando la esperanza matemática del tamaño poblacional $\mathbb{E}[N_t]$ junto con su intervalo de confianza al 95\%. Los resultados confirman la no supervivencia de la población en el caso base sin intervención, alcanzando una probabilidad de extinción del $100\%$ ($\eta=1.0$) y determinando un tiempo medio hasta la absorción de $\mathbb{E}[T_{\text{abs}}] \approx 72$ generaciones. Posteriormente se estudia el impacto de diferentes fármacos como alternativas a la enfermedad y se obtienen conclusiones sobre los resultados de supervivencia y extinción en la población.
 		\keywords{Procesos de Ramificación $\cdot$ Galton-Watson $\cdot$ Simulaciones Monte Carlo $\cdot$ Estado Absorbente $\cdot$ Dinámica Poblacional}}
 	
-
+	\clearpage
+	\section*{Índice General}
+	\begin{description}
+		\item[\ref{sec:introduccion}. Introducción] \dotfill \pageref{sec:introduccion}
+		\item[\ref{sec:marco_teorico}. Marco Teórico y Formulación Matemática] \dotfill \pageref{sec:marco_teorico}
+		\item[\ref{sec:caso_base}. Caso Base: Análisis Estocástico sin Intervención] \dotfill \pageref{sec:caso_base}
+		\item[\ref{sec:farmacos}. Evaluación del Impacto Farmacológico (Experimentos Comparativos)] \dotfill \pageref{sec:farmacos}
+		\item[\ref{sec:simulacion_farmacos}. Simulación de las Tres Estrategias Farmacológicas] \dotfill \pageref{sec:simulacion_farmacos}
+		\item[\ref{sec:discusion}. Análisis Comparativo y Discusión de Resultados] \dotfill \pageref{sec:discusion}
+		\item[\ref{sec:complejidad}. Análisis de la Complejidad Computacional] \dotfill \pageref{sec:complejidad}
+		\item[\ref{sec:conclusiones}. Conclusiones y Trabajos Futuros] \dotfill \pageref{sec:conclusiones}
+		\item[Anexo. Relación de Figuras del Estudio] \dotfill \pageref{sec:anexo}
+	\end{description}
+	\clearpage
 	
 	\section{Introducción}
 	\label{sec:introduccion}
@@ -70,9 +92,9 @@
 	El modelo se formaliza como un \textit{Proceso de Ramificación de Galton-Watson modificado}. Históricamente introducido por Francis Galton y Henry William Watson (1874) para estudiar la extinción de linajes, este marco asume generaciones discretas no solapadas donde el número de descendientes por individuo se rige por variables aleatorias independientes e idénticamente distribuidas ($X \sim \text{Poisson}(\lambda)$). En nuestra formulación, el proceso se extiende a un esquema multitipo en el que las probabilidades de transición y mortalidad están condicionadas por el progenitor, permitiendo evaluar la convergencia del sistema hacia su estado absorbente ($N=0$).
 	
 	\subsection{Objetivos del estudio}
-	Como se ha comentado con anterioridad, el objetivo del estudio es estudiar el caso base, en el que no se dispone de ningún fármaco que pueda detener la expansión de la enfermedad. Se demostrará posteriormente que el sistema acabará en un estado absorbente con $\eta = 1$, lo que supone la extinción de la población sin posibilidad ninguna de seguir reproduciéndose. 	
+	Como se ha comentado con anterioridad, el objetivo del estudio es estudiar el caso base, en el que no se dispone de ningún fármaco que pueda detener la expansión de la enfermedad. Posteriormente, se estudiarán las propiedades de tres fármacos diferentes y la probabilidad de extinción $\eta$ de la población añadiendo el uso de cada uno de ellos. 
 	
-	Tras el estudio del caso base se proponen tres fármacos diferentes para estudiar la evolución de la población en cada caso y las diferentes probabilidades de absorción de cada modelo. Se seguirá utilizando las simulaciones de \textit{Monte Carlo} durante todo el estudio como una de las principales herramientas para estabilizar la componente del azar. 
+	Tras el estudio del caso base se proponen tres fármacos diferentes para estudiar la evolución de la población en cada caso y las diferentes probabilidades de absorción de cada modelo. 
 	
 	\section{Marco Teórico y Formulación Matemática}
 	\label{sec:marco_teorico}
@@ -186,7 +208,7 @@
 	\end{itemize}
 	
 	\subsubsection{Parámetros Configurables del Sistema}
-	Los parámetros fijos que determinan las tasas de mortalidad, natalidad y probabilidad de transmisión condicional en el **Caso Base** se resumen en la Tabla~\ref{tab:parametros_caso_base}.
+	Los parámetros fijos que determinan las tasas de mortalidad, natalidad y probabilidad de transmisión condicional en el Caso Base se resumen en la Tabla~\ref{tab:parametros_caso_base}.
 	
 	\begin{table}[htbp]
 		\caption{Parámetros cuantitativos definidos para el modelo estocástico en el Caso Base.}
@@ -411,7 +433,7 @@
 	
 	
 	\subsection{Definición de los Escenarios Terapéuticos}
-	Con el objetivo de analizar la sensibilidad del sistema ante distintos niveles de potencia clínica, se definen tres escenarios farmacológicos independientes manteniendo constantes los parámetros demográficos del Caso Base ($N_0 = 1000$, $p_I = 0.05$, $\lambda = 1.15$, $m_0 = 0.05$, $m_1 = 0.60$, $p_0 = 0.15$ y $p_1 = 0.95$). Los valores asignados a cada tratamiento se detallan en la Tabla~\ref{tab:escenarios_farmacos}.
+	Con el objetivo de analizar la sensibilidad del sistema ante distintos niveles de potencia clínica, se definen tres escenarios farmacológicos independientes manteniendo los parámetros demográficos del Caso Base constantes ($N_0 = 1000$, $p_I = 0.05$, $\lambda = 1.15$, $m_0 = 0.05$, $m_1 = 0.60$, $p_0 = 0.15$ y $p_1 = 0.95$). Los valores asignados a cada tratamiento se detallan en la Tabla~\ref{tab:escenarios_farmacos}.
 	
 	\begin{table}[htbp]
 		\caption{Configuración de los parámetros terapéuticos ($\alpha$ y $\rho$) y mortalidad efectiva resultante para los tres fármacos evaluados.}
@@ -532,6 +554,7 @@
 	Este tercer modelo asegura una expansión demográfica sostenida y el control efectivo de la patología.
 	
 	\section{Simulación de las tres estrategias farmacológicas}
+	\label{sec:simulacion_farmacos}
 	La realización de las tres simulaciones de las diferentes estrategias farmacológicas mantiene la estructura algorítmica respecto a la del caso base. Las modificaciones del código \textit{Python} han sido las siguientes: 
 	\begin{itemize}
 		\item Modificar la probabilidad de muerte del enfermo de $m_1$ a $m_1*(1-\alpha)$. 
@@ -650,6 +673,7 @@
 	\end{table}
 	
 	\section{Análisis de la complejidad computacional}
+	\label{sec:complejidad}
 	Se presenta un problema crítico cuando se tratan de ejecutar las simulaciones de Monte Carlo cuando la población no converge a la absorción. Ocurre debido a que el número de individuos de cada generación aumenta exponencialmente y la complejidad asintótica promedio pasa a ser demasiado elevada. Esto supone un tiempo de cómputo demasiado largo. 
 	
 	Para superar este cuello de botella sin alterar la exactitud estocástica del modelo, se aplicó una \textit{reducción analítica mediante propiedades de aditividad de distribuciones} (vectorización por compartimentos):
@@ -706,6 +730,25 @@
 	\subsubsection{Resistencias farmacológicas}
 	No se tiene en cuenta el tiempo de eficacia que tiene el fármaco, o si quizás con el paso del tiempo las generaciones se inmunizan del fármaco y vuelve a aumentar su probabilidad de padecer la enfermedad o fallecer. 
 	
-	
+
+\clearpage
+\appendix
+\section*{Anexo: Relación de Figuras del Estudio}
+\label{sec:anexo}
+\addcontentsline{toc}{section}{Anexo: Relación de Figuras del Estudio}
+
+\begin{itemize}
+	\item \textbf{Figura~\ref{fig:grafo_estados}} (pág.~\pageref{fig:grafo_estados}): Grafo de transición de estados individuales en el sistema estocástico.
+	\item \textbf{Figura~\ref{fig:arbol_galton_watson}} (pág.~\pageref{fig:arbol_galton_watson}): Representación en árbol de ramificación de Galton-Watson multitipo a lo largo de 3 generaciones.
+	\item \textbf{Figura~\ref{fig:simulacion_inicial_caso_base}} (pág.~\pageref{fig:simulacion_inicial_caso_base}): Trayectoria temporal de la población en una única realización del Caso Base sin intervención farmacológica.
+	\item \textbf{Figura~\ref{fig:simulacion_inicial_caso_base_monte_carlo}} (pág.~\pageref{fig:simulacion_inicial_caso_base_monte_carlo}): Trayectoria temporal de la población en una simulación Monte Carlo ($M=500$) del Caso Base sin intervención farmacológica.
+	\item \textbf{Figura~\ref{fig:grafo_estados_farmaco}} (pág.~\pageref{fig:grafo_estados_farmaco}): Grafo de transición de estados individuales bajo intervención farmacológica.
+	\item \textbf{Figura~\ref{fig:simulacion_caso_farmaco_1}} (pág.~\pageref{fig:simulacion_caso_farmaco_1}): Trayectoria temporal en una única realización con el Fármaco 1 ($\alpha=0.30, \rho=0.10$).
+	\item \textbf{Figura~\ref{fig:simulacion_caso_farmaco_1_monte_carlo}} (pág.~\pageref{fig:simulacion_caso_farmaco_1_monte_carlo}): Trayectoria temporal en simulación Monte Carlo ($M=500$) con el Fármaco 1 ($\alpha=0.30, \rho=0.10$).
+	\item \textbf{Figura~\ref{fig:simulacion_caso_farmaco_2}} (pág.~\pageref{fig:simulacion_caso_farmaco_2}): Trayectoria temporal en una única realización con el Fármaco 2 ($\alpha=0.60, \rho=0.35$).
+	\item \textbf{Figura~\ref{fig:simulacion_caso_farmaco_2_monte_carlo}} (pág.~\pageref{fig:simulacion_caso_farmaco_2_monte_carlo}): Trayectoria temporal en simulación Monte Carlo ($M=500$) con el Fármaco 2 ($\alpha=0.60, \rho=0.35$).
+	\item \textbf{Figura~\ref{fig:simulacion_caso_farmaco_3}} (pág.~\pageref{fig:simulacion_caso_farmaco_3}): Trayectoria temporal en una única realización con el Fármaco 3 ($\alpha=0.85, \rho=0.70$).
+	\item \textbf{Figura~\ref{fig:simulacion_caso_farmaco_3_monte_carlo}} (pág.~\pageref{fig:simulacion_caso_farmaco_3_monte_carlo}): Trayectoria temporal en simulación Monte Carlo ($M=500$) con el Fármaco 3 ($\alpha=0.85, \rho=0.70$).
+\end{itemize}
 	
 \end{document}
